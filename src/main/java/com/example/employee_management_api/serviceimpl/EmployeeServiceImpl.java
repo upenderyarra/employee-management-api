@@ -1,10 +1,9 @@
 package com.example.employee_management_api.serviceimpl;
 
-import com.example.employee_management_api.EmployeeRepository;
+import com.example.employee_management_api.repository.EmployeeRepository;
 import com.example.employee_management_api.dto.EmployeeDTO;
 import com.example.employee_management_api.entity.Employee;
 import com.example.employee_management_api.service.EmployeeService;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

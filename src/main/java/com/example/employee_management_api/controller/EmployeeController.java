@@ -3,6 +3,7 @@ package com.example.employee_management_api.controller;
 import com.example.employee_management_api.dto.EmployeeDTO;
 import com.example.employee_management_api.entity.Employee;
 import com.example.employee_management_api.service.EmployeeService;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +19,7 @@ public class EmployeeController {
     private final EmployeeService service;
 
     @PostMapping
-    public Employee create( @RequestBody EmployeeDTO dto) {
+    public Employee create(@Valid @RequestBody EmployeeDTO dto) {
         return service.createEmployee(dto);
     }
 }

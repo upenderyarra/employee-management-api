@@ -1,4 +1,4 @@
-package com.example.employee_management_api;
+package com.example.employee_management_api.repository;
 
 import com.example.employee_management_api.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
