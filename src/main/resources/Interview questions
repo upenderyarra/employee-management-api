@@ -195,5 +195,216 @@ DELETE → remove user
 
 
 
+---
+
+1. What is the difference between HTTP and HTTPS?
+
+HTTP → Unencrypted
+HTTPS → Encrypted using SSL/TLS (secure, prevents MITM attacks)
+
+
+---
+
+2. What is REST?
+
+REST is an architectural style that uses:
+
+Stateless communication
+
+HTTP methods
+
+Resource-based URLs
+
+JSON/XML representations
+
+Cacheable responses
+
+
+
+---
+
+3. What is a REST Resource?
+
+Anything that can be identified by a URI. Example:
+/users/10 → user resource
+/products/5/reviews → review resource
+
+
+---
+
+4. What is HATEOAS?
+
+Hypermedia As The Engine Of Application State
+API response contains links to navigate further.
+
+Example:
+
+{
+  "id": 10,
+  "name": "Upender",
+  "_links": {
+    "self": "/users/10",
+    "orders": "/users/10/orders"
+  }
+}
+
+
+---
+
+5. Explain statelessness in REST.
+
+Server does NOT store client session.
+Each request contains everything needed.
+
+
+---
+
+6. How do you make APIs scalable?
+
+Caching (Redis)
+
+Load balancing
+
+Pagination
+
+Async processing (Kafka/Queues)
+
+Database indexing
+
+Microservices
+
+
+
+---
+
+7. Difference: Authentication vs Authorization.
+
+Authentication → "Who are you?"
+Authorization → "What can you access?"
+
+
+---
+
+8. What is CORS?
+
+Cross-Origin Resource Sharing
+Used when frontend & backend run on different domains.
+
+
+---
+
+9. Why do browsers send OPTIONS request?
+
+For CORS preflight.
+To check allowed methods: GET, POST, PUT, etc.
+
+
+---
+
+10. When should we use PUT vs PATCH?
+
+PUT → full update
+PATCH → partial update
+
+
+---
+
+11. What is an Idempotent method?
+
+Calling the method multiple times yields the same result.
+Examples: GET, PUT, DELETE.
+
+
+---
+
+12. Why POST is not idempotent?
+
+Multiple POST calls create multiple records.
+
+
+---
+
+13. What is rate limiting?
+
+Control how many requests a client can send.
+Protects server from abuse.
+
+
+---
+
+14. What is difference between 200, 201, 204 status codes?
+
+200 → Success + body
+201 → Created (new resource created)
+204 → Success but no body
+
+
+---
+
+15. What is Content Negotiation?
+
+Client selects format:
+Accept: application/json
+Server chooses response format based on header.
+
+
+---
+
+16. Why should URIs not contain verbs?
+
+URIs represent resources, not actions.
+Use:
+
+/users
+
+/users/10
+
+
+Not:
+
+/getUsers
+
+/createUser
+
+
+
+---
+
+17. What are idempotent & safe methods?
+
+Safe → GET, HEAD, OPTIONS
+Idempotent → GET, PUT, DELETE
+
+
+---
+
+18. Difference between Query Params and Path Params
+
+Path params → resource identity
+/users/10
+
+Query params → filter / sort / pagination
+/users?page=2&limit=10
+
+
+---
+
+19. What is API versioning?
+
+Maintains backward compatibility.
+Example:
+/api/v1/users
+/api/v2/users
+
+
+---
+
+20. What is ETag?
+
+Used for caching.
+Server sends a unique hash:
+ETag: "ab32ef"
+Browser uses it to check if resource changed.
+
 
 ---
