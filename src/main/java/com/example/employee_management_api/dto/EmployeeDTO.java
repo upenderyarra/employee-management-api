@@ -3,8 +3,10 @@ package com.example.employee_management_api.dto;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.*;
 import lombok.Data;
+import lombok.ToString;
 
 @Data
+@ToString
 public class EmployeeDTO {
 
     @NotBlank(message = "Name cannot be empty")
